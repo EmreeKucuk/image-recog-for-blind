@@ -1,0 +1,7 @@
+ultralytics
+pyttsx3
+SpeechRecognition
+pyaudio
+opencv-python
+Pillow
+tkinter
