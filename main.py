@@ -28,19 +28,19 @@ def classify_image(img_path):
 # === Sesli konuşma ve animasyon ===
 def speak(text):
     def run():
-        animate_wave(True)
+        animate_wave(True)  # Konuşma başladığında animasyonu başlat
         engine.say(text)
         engine.runAndWait()
-        animate_wave(False)
+        animate_wave(False)  # Konuşma bitince animasyonu durdur
     threading.Thread(target=run).start()
 
 # === Dalga animasyonu ===
 def animate_wave(state):
     if state:
-        wave_label.pack()
+        wave_label.pack()  # Animasyonu başlat
         cycle_wave()
     else:
-        wave_label.pack_forget()
+        wave_label.pack_forget()  # Animasyonu durdur
 
 def cycle_wave():
     def animate():
@@ -118,6 +118,7 @@ image_label.pack(pady=10)
 label = tk.Label(root, text="", font=("Arial", 14))
 label.pack(pady=10)
 
+# Dalga animasyonu için resimler
 wave_images = [ImageTk.PhotoImage(Image.open(f"wave/frame{i}.png").resize((100, 50))) for i in range(1, 6)]
 wave_label = tk.Label(root)
 
